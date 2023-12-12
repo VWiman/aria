@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<main class="main">
+			<button id="btnOne" class="btnOne" aria-haspopup="dialog" aria-hidden="false">
+				Klicka på mig för att visa ett tillgängligt <strong>modalfönster</strong>.
+			</button>
+
+			<div id="accessibleModal" class="modal-bg" role="dialog" hidden>
+				<div class="modal-content" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+					<h2 id="modalTitle">Ett tillgängligt modalfönster</h2>
+					<p id="modalDesc" aria-live="assertive">Här är lite text i modalfönstret.</p>
+					<button id="closeModalBtn">Stäng</button>
+				</div>
+			</div>
+
+			<button id="btnTwo" class="btnOne" aria-haspopup="dialog" aria-hidden="false">
+				Klicka på mig för att visa ett tillgängligt <strong>dialogfönster</strong>.
+			</button>
+
+<!-- Fördelen med dialog är att jag inte behöver använda role eller hidden. -->
+
+			<dialog id="accessibleDialog" class="dialog-bg">
+				<div class="modal-content" aria-modal="true" aria-labelledby="dialogTitle">
+					<h2 id="dialogTitle">Exempel på tillgängligt modalfönster med dialog</h2>
+					<p aria-live="assertive">Här är innehållet i dialogfönstret.</p>
+					<button id="closeDialogBtn">Stäng</button>
+				</div>
+			</dialog>
+
+			<div>
+				<button
+					id="menuButton"
+					aria-haspopup="true"
+					role="menu"
+					aria-pressed="false"
+					aria-controls="menuContent"
+					aria-label="Meny">
+					Meny
+				</button>
+				<nav class="menu">
+					<ul id="menuContent" hidden>
+						<li id="item1" role="none"><a role="menuitem" href="#">Hem</a></li>
+						<li id="item2" role="none"><a role="menuitem" href="#">Om oss</a></li>
+						<li id="item3" role="none"><a role="menuitem" href="#">Tjänster</a></li>
+						<li id="item4" role="none"><a role="menuitem" href="#">Kontakt</a></li>
+					</ul>
+				</nav>
+			</div>
+		</main>
+		<script src="script.js"></script>
+	</body>
+</html>
